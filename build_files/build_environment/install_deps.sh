@@ -3055,7 +3055,9 @@ compile_USD() {
       download USD_SOURCE[@] "$_src.tar.gz"
 
       INFO "Unpacking USD-$USD_VERSION"
+      echo "---> $(ls $SRC)"
       tar -C $SRC -xf $_src.tar.gz
+      echo "+++> $(ls $SRC)"
       patch -d $_src -p1 < $SCRIPT_DIR/patches/usd.diff
     fi
 

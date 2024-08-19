@@ -3004,7 +3004,7 @@ compile_ALEMBIC() {
 
 #### Build USD ####
 _init_usd() {
-  _src=$SRC/USD-$USD_VERSION
+  _src=$SRC/OpenUSD-$USD_VERSION
   _git=false
   _inst=$INST/usd-$USD_VERSION_SHORT
   _inst_shortcut=$INST/usd
@@ -3054,10 +3054,8 @@ compile_USD() {
       mkdir -p $SRC
       download USD_SOURCE[@] "$_src.tar.gz"
 
-      INFO "Unpacking USD-$USD_VERSION"
-      echo "---> $(ls $SRC)"
+      INFO "Unpacking OpenUSD-$USD_VERSION"
       tar -C $SRC -xf $_src.tar.gz
-      echo "+++> $(ls $SRC)"
       patch -d $_src -p1 < $SCRIPT_DIR/patches/usd.diff
     fi
 
